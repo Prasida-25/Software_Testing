@@ -6,17 +6,12 @@ chương trình Software Testing and Automation của University of Minnesota:
 Introduction to Software Testing, Black-box and White-box Testing, Introduction
 to Automated Analysis và Web and Mobile Testing with Selenium.
 
-> Phần kế hoạch dưới đây mô tả những việc sẽ thực hiện cho bài tập lớn, không phải
-> báo cáo kết quả đã hoàn thành. Các kết quả trong phần tài liệu kỹ thuật phía dưới
-> thuộc những lần triển khai trước; cần chạy lại trên phiên bản được chọn để làm
-> bằng chứng cho báo cáo cuối kỳ.
-
 ## 1. Giới thiệu và mục tiêu
 
-TechZone là website bán hàng công nghệ, xây dựng bằng Node.js, Express, EJS,
-JavaScript thuần và MySQL; tên thư mục mã nguồn là `TechShop`. Đồ án tận dụng
+TechZone là website bán hàng công nghệ được xây dựng bằng Node.js, Express, EJS,
+JavaScript và MySQL. Tên thư mục mã nguồn là `TechShop`. Đồ án tận dụng
 website hiện có để khảo sát yêu cầu, thiết kế kiểm thử, thực thi, ghi nhận lỗi và
-đánh giá chất lượng phần mềm trong môi trường local.
+đánh giá chất lượng phần mềm.
 
 Mục tiêu của bài tập lớn:
 
@@ -37,45 +32,17 @@ Mục tiêu của bài tập lớn:
 | Đơn hàng khách hàng | Xem lịch sử, chi tiết, kiểm tra quyền sở hữu và hủy đơn chờ xác nhận |
 | Quản lý đơn hàng của admin | Kiểm tra phân quyền và các chuyển trạng thái hợp lệ, không hợp lệ |
 
-Phạm vi thực thi sẽ được đối chiếu với yêu cầu giảng viên và phiên bản ứng dụng
-chốt cho bài tập lớn. Các phần khác trong mã nguồn như mã giảm giá, chuyển khoản,
-đánh giá sản phẩm và quản trị catalog chưa thuộc phạm vi kiểm thử chính của kế
-hoạch này. Không phát triển thêm chức năng chỉ để mở rộng số lượng bài kiểm thử.
-
-Đồ án tập trung vào website; kiểm tra trên kích thước màn hình điện thoại không
-đồng nghĩa với kiểm thử ứng dụng mobile native. Kiểm thử tải lớn, cổng thanh toán
-thực tế, triển khai hosting và các chức năng ngoài phạm vi trên chưa nằm trong kế hoạch.
-
-## 3. Vận dụng kiến thức từ bốn khóa học
-
-| Khóa học | Công việc dự kiến | Bằng chứng cần thu thập |
-| --- | --- | --- |
-| Introduction to Software Testing | Xây dựng kế hoạch; xác định test oracle, mức kiểm thử, điều kiện đầu vào và kết quả mong đợi; thực hiện kiểm thử đơn vị và tích hợp | Kế hoạch kiểm thử, bộ test case, nhật ký thực thi |
-| Black-box and White-box Testing | Áp dụng phân vùng tương đương, giá trị biên, bảng quyết định và chuyển trạng thái; thiết kế test theo nhánh xử lý trong mã nguồn | Bảng thiết kế dữ liệu, test case, báo cáo độ bao phủ câu lệnh và nhánh |
-| Introduction to Automated Analysis | Phân tích tĩnh mã JavaScript; mô tả điều kiện trước/sau và bất biến của đặt/hủy đơn; xây dựng mô hình trạng thái đơn hàng để kiểm tra các chuyển trạng thái | Báo cáo phân tích, mô hình, thuộc tính cần kiểm chứng và các vi phạm phát hiện được |
-| Web and Mobile Testing with Selenium | Tự động hóa các luồng chính trên trình duyệt, sử dụng locator ổn định và chờ theo điều kiện; kiểm tra kết quả sau thao tác | Mã kiểm thử Selenium, kết quả chạy, ảnh minh chứng khi có lỗi |
-
-Phân tích tĩnh bằng công cụ lint chỉ là một phần của phân tích tự động, không
-thay thế kiểm chứng hình thức. Công cụ kiểm tra mô hình và yêu cầu áp dụng cụ thể
-sẽ được chốt theo tiêu chí môn học; chỉ ghi nhận đã kiểm chứng khi có mô hình,
-thuộc tính và kết quả thực thi tương ứng.
-
-## 4. Công nghệ và công cụ
+## 3. Công nghệ và công cụ
 
 | Thành phần | Hiện trạng hoặc kế hoạch |
 | --- | --- |
 | Ứng dụng | Giữ Node.js, Express, EJS, JavaScript và MySQL hiện có |
 | Bộ test hiện tại | Dùng `node:test`, chạy qua `npm test`; có các bộ giả lập và script kiểm tra MySQL riêng |
-| Jest | Dự kiến bổ sung cho nhóm kiểm thử đơn vị và đo coverage của bài tập lớn; chưa được cấu hình trong `package.json` tại thời điểm lập kế hoạch |
-| Selenium WebDriver | Dự kiến bổ sung cho kiểm thử trình duyệt; có thể viết bằng Java nếu môn học yêu cầu, không cần chuyển website sang Java |
-| Phân tích tĩnh | Dự kiến sử dụng ESLint với bộ quy tắc phù hợp JavaScript; chưa cấu hình trong nhiệm vụ viết tài liệu này |
-| Quản lý kết quả | Lưu test case, báo cáo lỗi, bảng liên kết yêu cầu với test và minh chứng trong tài liệu dự án |
+| Jest | Dự kiến bổ sung cho nhóm kiểm thử đơn vị và đo coverage của bài tập lớn. |
+| Selenium WebDriver | Dự kiến bổ sung cho kiểm thử trình duyệt. |
+| Phân tích tĩnh | Dự kiến sử dụng ESLint với bộ quy tắc phù hợp JavaScript. |
 
-Sẽ khảo sát các test hiện có trước khi bổ sung để tái sử dụng tình huống phù hợp.
-Không chuyển đổi toàn bộ bộ test sang công cụ khác khi chưa cần thiết. Các công
-cụ dự kiến ở trên chưa được cài đặt chỉ bằng việc bổ sung README này.
-
-## 5. Các tình huống kiểm thử tiêu biểu
+## 4. Các tình huống kiểm thử tiêu biểu
 
 - **Đăng nhập:** thông tin hợp lệ, sai mật khẩu, trường trống và truy cập chức năng yêu cầu đăng nhập khi chưa có phiên.
 - **Phí vận chuyển:** tiền hàng 299.999đ, 300.000đ và 300.001đ; lần lượt mong đợi phí 30.000đ, 0đ và 0đ, trong trường hợp không áp dụng mã giảm giá.
@@ -83,14 +50,9 @@ cụ dự kiến ở trên chưa được cài đặt chỉ bằng việc bổ s
 - **Quyền sở hữu:** tài khoản A không được xem hoặc thao tác trên đơn hàng, địa chỉ của tài khoản B.
 - **Tính tiền:** sửa giá hoặc tổng tiền trong request không làm thay đổi cách server tính tiền từ dữ liệu tin cậy.
 - **Hủy đơn:** chỉ cho khách hủy đơn chờ xác nhận; yêu cầu hủy lặp không được hoàn kho nhiều lần.
-- **Transaction và đồng thời:** hai yêu cầu mua phần tồn kho cuối không gây bán vượt kho; lỗi giữa chừng không để lại đơn hoặc tồn kho cập nhật dở dang.
+- **Giao dịch:** hai yêu cầu mua sản phẩm tồn kho cuối không gây bán vượt kho; lỗi giữa chừng không để lại đơn hoặc tồn kho cập nhật dở dang.
 
-Mỗi trường hợp cần ghi: mã test, yêu cầu liên quan, tiền điều kiện, dữ liệu,
-các bước, kết quả mong đợi, kết quả thực tế, trạng thái và minh chứng. Kết quả
-mong đợi được xác định từ yêu cầu đã chốt, không lấy hành vi hiện tại của ứng
-dụng làm mặc định đúng.
-
-## 6. Các bước thực hiện
+## 5. Các bước thực hiện
 
 1. **Khảo sát:** đọc yêu cầu, mã nguồn, schema và các test hiện có; chốt phiên bản, phạm vi và tiêu chí đánh giá.
 2. **Lập kế hoạch:** xác định rủi ro, môi trường, dữ liệu, công cụ, cách ghi nhận lỗi và điều kiện kết thúc kiểm thử.
@@ -100,7 +62,7 @@ dụng làm mặc định đúng.
 6. **Xử lý lỗi:** phân loại mức độ, xác định nguyên nhân; sửa trong phạm vi được giao, kiểm thử lại và kiểm thử hồi quy.
 7. **Tổng hợp:** đánh giá kết quả, trình bày hạn chế, hoàn thiện báo cáo và kịch bản demo cuối kỳ.
 
-## 7. Môi trường và nguyên tắc dữ liệu kiểm thử
+## 6. Môi trường và nguyên tắc dữ liệu kiểm thử
 
 - Thực hiện trên môi trường local; dùng dữ liệu giả lập cho các test không cần MySQL.
 - Test tạo tài khoản, tạo/hủy đơn, cập nhật tồn kho và các thao tác ghi khác chỉ chạy trên database kiểm thử riêng đã được cho phép.
@@ -110,7 +72,7 @@ dụng làm mặc định đúng.
 - Không đưa `.env`, mật khẩu, cookie phiên hoặc thông tin cá nhân vào Git, ảnh chụp và báo cáo.
 - Giữ giao diện hiện tại và bản đối chiếu `frontend-static/`; lỗi ngoài phạm vi được ghi nhận để xem xét riêng.
 
-## 8. Sản phẩm bàn giao và tiêu chí đánh giá
+## 7. Sản phẩm bàn giao và tiêu chí đánh giá
 
 Sản phẩm dự kiến gồm:
 
@@ -121,13 +83,7 @@ Sản phẩm dự kiến gồm:
 - Danh sách lỗi có mức độ nghiêm trọng, bước tái hiện và minh chứng.
 - Báo cáo tổng kết chất lượng và kịch bản demo các tình huống tiêu biểu.
 
-Báo cáo sẽ thống kê số test đạt, không đạt, bị chặn và chưa chạy; độ bao phủ
-câu lệnh/nhánh trong phạm vi đo; số lỗi theo mức độ và trạng thái xử lý. Không
-đặt trước kết quả đạt hoặc đồng nhất coverage cao với phần mềm không còn lỗi.
-Các luồng chính phải có bằng chứng thực thi; các lỗi nghiêm trọng còn mở và
-những phần chưa kiểm tra phải được trình bày rõ khi kết luận.
-
-## 9. Hướng dẫn sử dụng tài liệu và chạy kiểm tra hiện có
+## 8. Hướng dẫn sử dụng tài liệu và chạy kiểm tra hiện có
 
 Hướng dẫn cấu hình và khởi động ứng dụng được giữ trong phần tài liệu kỹ thuật
 bên dưới. Để chạy bộ test hiện có không cần MySQL, sau khi đã cài các dependency:
